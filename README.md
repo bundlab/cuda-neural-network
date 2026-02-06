@@ -65,6 +65,15 @@ This project supports Docker for reproducible CUDA builds.
 
 ---
 
+## GitHub Actions CI Note
+
+GitHub-hosted runners do not include the CUDA toolkit (`nvcc`).
+Therefore, CUDA compilation is skipped automatically in CI.
+
+To build the project locally, install the NVIDIA CUDA Toolkit.
+
+---
+
 ## ⚙️ Requirements
 
 To build and run this project, you need:

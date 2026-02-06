@@ -1,16 +1,27 @@
 cmake_minimum_required(VERSION 3.18)
-project(cuda_neural_net LANGUAGES CXX CUDA)
+
+project(cuda_neural_net LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CUDA_STANDARD 17)
 
-include_directories(include)
+# Try enabling CUDA if available
+include(CheckLanguage)
+check_language(CUDA)
 
-add_executable(cuda_nn
-    src/main.cpp
-    src/neural_net.cu
-)
+if(CMAKE_CUDA_COMPILER)
+    enable_language(CUDA)
+    message(STATUS "CUDA found: Building with GPU support")
 
-set_target_properties(cuda_nn PROPERTIES
-    CUDA_SEPARABLE_COMPILATION ON
-)
+    add_executable(cuda_nn
+        src/main.cpp
+        src/neural_net.cu
+    )
+
+    set_target_properties(cuda_nn PROPERTIES
+        CUDA_SEPARABLE_COMPILATION ON
+    )
+
+else()
+    message(WARNING "CUDA toolkit not found. Building skipped in CI.")
+endif()
+
