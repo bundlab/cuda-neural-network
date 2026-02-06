@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  cuda_nn:
+    build: .
+    container_name: cuda-neural-network
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    command: ./build/cuda_nn

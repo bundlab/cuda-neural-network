@@ -1,0 +1,31 @@
+name: CUDA Build CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y cmake g++
+
+    - name: Configure Project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+
+    - name: Build Project
+      run: |
+        cd build
+        make
