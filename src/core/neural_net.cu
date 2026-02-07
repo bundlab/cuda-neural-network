@@ -1,6 +1,6 @@
 #include <cuda_runtime.h>
 #include <iostream>
-#include "neural_net.h"
+#include "cuda_nn/neural_net.h"
 
 __global__ void relu(float* x, int n) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;

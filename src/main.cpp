@@ -1,5 +1,5 @@
 #include <iostream>
-#include "neural_net.h"
+#include "cuda_nn/neural_net.h"
 
 int main() {
     NeuralNet nn(2, 4, 1);
