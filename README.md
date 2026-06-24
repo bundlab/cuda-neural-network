@@ -46,6 +46,7 @@ It is designed for:
 
 ## 📂 Project Structure
 
+```text
 cuda-neural-network/
 ├── CMakeLists.txt
 ├── README.md
@@ -56,7 +57,7 @@ cuda-neural-network/
 │ ├── neural_net.cu
 │ └── main.cpp
 └── build/ (generated after compilation)
-
+```
 ---
 
 ## 🐳 Run with Docker (GPU Supported)
