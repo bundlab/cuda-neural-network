@@ -34,14 +34,14 @@ It is designed for:
 ---
 
 ## ✨ Features
-
+```text
 ✅ Fully Connected Dense Layer
 ✅ GPU Matrix Multiplication Kernels
 ✅ ReLU Activation + Derivative
 ✅ Full Backpropagation Support
 ✅ Weight Updates using SGD
 ✅ Modular Design (Extendable for deeper models)
-
+```
 ---
 
 ## 📂 Project Structure
