@@ -126,9 +126,9 @@ Developed by bundlab
 GPU Computing + Neural Networks in Modern C++
 
 ### Build Docker Image
----bash
+```bash
 docker build -t cuda-neural-network .
-
+```
 
 ⭐ If you like this project, give it a star on GitHub!
 
